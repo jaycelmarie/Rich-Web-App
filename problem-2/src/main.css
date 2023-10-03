@@ -39,3 +39,27 @@ body{
 .add-note:hover{
     background: rgba(0,0,0,0.2);
 }
+
+.save-note{
+    height: 200px;
+    padding: 16px;
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,0.1); 
+    font-size: 120px;
+    color: rgba(0,0,0,0.5); 
+    cursor: pointer;
+    transition: background 0.2s; /* smooth fade between two bg colours - for transition*/
+}
+
+.save-btn{
+    height: 50px;
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,0.1); 
+    font-size: 120px;
+    color: rgba(0,0,0,0.5); 
+    cursor: pointer;
+    transition: background 0.2s; /* smooth fade between two bg colours - for transition*/
+}
+

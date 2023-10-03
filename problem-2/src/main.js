@@ -1,5 +1,6 @@
 const nContainer = document.getElementById("note-app");
 const addNoteBtn = nContainer.querySelector(".add-note");
+const saveNoteBtn = nContainer.querySelector(".save-note");
 
 getNotes().forEach((notes) => {
     const nElement = createNoteElement(notes.id, notes.content);
@@ -7,6 +8,8 @@ getNotes().forEach((notes) => {
 });
 
 addNoteBtn.addEventListener("click", () => addNote());
+saveNoteBtn.addEventListener("click", () => updateNote());
+
 
 function getNotes() {
     /* Retrieve notes locally */
@@ -26,9 +29,11 @@ function createNoteElement(id, content){
     element.value = content;
     element.placeholder = "Empty";
 
-    element.addEventListener("change", () => {
-        updateNote(id, element.value);
-    });
+    //  element.addEventListener("change", () => {
+    //    updateNote(id, element.value);
+    //  });
+
+    saveNoteBtn.addEventListener("click", () => updateNote(id, element.value));
 
     element.addEventListener("dblclick", () => {
         const dlt = confirm("Confirm if you'd like to delete Note");
@@ -43,7 +48,7 @@ function createNoteElement(id, content){
 
 function addNote() {
     /* Add new Note */
-    const localNotes = getNotes();
+    const notes = getNotes();
     const nObject = {
         id: Math.floor(Math.random() * 100000),
         content: ""
@@ -53,18 +58,22 @@ function addNote() {
     nContainer.insertBefore(nElement, addNoteBtn); 
 
     notes.push(nObject); // re-save it locally
-    saveNotes(localNotes);
+    saveNotes(notes);
 }
 
 function updateNote(id, newContent) {
     /* Update existing Note */
-    console.log("Updating Note..");
-    console.log(id, newContent);
+    const unotes = getNotes();
+    // find target note
+    const tNote = unotes.filter(notes => notes.id == id)[0]; // gives array of single element
+
+    tNote.content = newContent;
+    saveNotes(unotes);
 }
 
 function deleteNote(id, element) {
     /* Delete a note */
-    console.log("Deleting Note..");
-    console.log(id);
+    const notes = getNotes();
+
 
 }
