@@ -7,7 +7,7 @@
 // 	"https://lh3.googleusercontent.com/pw/AL9nZEXYJlrVkYoKIkpx07_3F4HOiTiOheaoaiRAcwrUg3C613-jkzEubJ3k8Z9fDjG5IfVqCzorphZ00vp6mIyB79GtCsoyV69xXe9cqrA0zglgrcvYhH2UP4cDR88WTm1AmuyCxQHAWCB5JzKD7eD94dtNZA=w690-h920-no"
 // ];
 
-let hamsterImages = [
+var hamsterImages = [
     "https://www.wittemolen.com/sites/default/files/styles/full_width/public/slides/SLIDER-Hamster.jpg?itok=t7h_LCJE",
     "https://thumbor.bigedition.com/cute-hamster-wearing-a-hat/-ZKI5q21vy7CDoGBaTZjphtPGwM=/20x142:729x674/480x360/filters:format(webp):quality(80)/granite-web-prod/96/82/96821b390a3b46ffb6b4710554f48e60.jpeg",
     "https://verdecora.es/blog/wp-content/uploads/2020/01/que-comen-hamsters.jpg",
@@ -38,11 +38,35 @@ let samoyedImages = [
 
 //reverse through array of images
 //getting random image from the array we created before (we use math.floor and math.random to grab a random index in the array)
-const imgs = document.getElementsByTagName("img");
-for(let i = 0; i < imgs.length; i++) {
-    const randomImg = Math.floor(Math.random() * hamsterImages.length)
-    imgs[i].src = hamsterImages[randomImg]
+// const imgs = document.getElementsByTagName("img");
+// for(let i = 0; i < imgs.length; i++) {
+//     const randomImg = Math.floor(Math.random() * hamsterImages.length)
+//     imgs[i].src = hamsterImages[randomImg]
+// }
+
+var curIndex = 0;
+var imgDuration = 5000;
+
+function slideShow() {
+    
+    const imgs = document.getElementsByTagName("img");
+
+    for(let i = 0; i < imgs.length; i++) {
+        const randomImg = Math.floor(Math.random() * hamsterImages.length)
+        imgs[i].src = hamsterImages[curIndex];
+
+        curIndex++;
+
+        if(curIndex == hamsterImages.length) {curIndex = 0;}
+
+        setTimeout("slideShow()", imgDuration);
+        //imgs[i].src = hamsterImages[randomImg]
+
+    }
 }
+slideShow();
+ 
+ 
 //do the same for h1 elements
 const headers = document.getElementsByTagName("h1");
 for (let i = 0; i < headers.length; i++){
@@ -55,16 +79,15 @@ for (let i = 0; i < p.length; i++){
     p[i].innerText = "Samoyed are cool! :D";
 }
 
-// do the same for body element
-const body = document.getElementsByTagName("body");
-for (let i = 0; i < body.length; i++){
-    const randomImg2 = Math.floor(Math.random() * samoyedImages.length)
-    imgs[i].src = samoyedImages[randomImg2]
-}
-
 // do the same for footer element
 const footer = document.getElementsByTagName("footer");
 for (let i = 0; i < footer.length; i++){
     footer[i].innerText = "This footer has been edited by Jaycel Estrellado!";
 }
 
+// do the same for span element
+const span = document.getElementsByTagName("span");
+for (let i = 0; i < span.length; i++){
+    span[i].innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
+    
+}
