@@ -73,7 +73,9 @@ function updateNote(id, newContent) {
 
 function deleteNote(id, element) {
     /* Delete a note */
-    const notes = getNotes();
+    const dnotes = getNotes().filter((notes) => notes.id != id);
 
-
+    saveNotes(dnotes);
+    nContainer.removeChild(element);
 }
+

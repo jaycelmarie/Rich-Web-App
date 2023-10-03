@@ -63,3 +63,6 @@ body{
     transition: background 0.2s; /* smooth fade between two bg colours - for transition*/
 }
 
+.save-note:hover{
+    background: rgba(0,0,0,0.2);
+}
