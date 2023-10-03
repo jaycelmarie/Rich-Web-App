@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background: blue;
+    background: rgba(255,99,71,0.5);
 }
 
 #note-app{
@@ -21,7 +21,7 @@ body{
     resize: none;
     font-family: sans-serif;
     font-size: 16px;
-    background: red;
+    background: rgb(118,172,106); 
 }
 
 .add-note{
