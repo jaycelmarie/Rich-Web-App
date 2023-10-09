@@ -3,7 +3,7 @@ const addNoteBtn = nContainer.querySelector(".add-note");
 const saveNoteBtn = nContainer.querySelector(".save-note");
 
 getNotes().forEach((notes) => {
-    const nElement = createNoteElement(notes.id, notes.content);
+    const nElement = createNoteElement(notes.id, notes.content, notes.color);
     nContainer.insertBefore(nElement, addNoteBtn); // insert note before add button
 });
 
@@ -21,17 +21,14 @@ function saveNotes(notes) {
     localStorage.setItem("notetaking-notes", JSON.stringify(notes)); // Get existing notes locally and add new objects into existing array and save it locally.
 }
 
-function createNoteElement(id, content){
+function createNoteElement(id, content, color){
     /* Build new HTML element representating a note */
     const element = document.createElement("textarea"); // js representation of an html element
 
     element.classList.add("notes");
     element.value = content;
     element.placeholder = "Empty";
-
-    //  element.addEventListener("change", () => {
-    //    updateNote(id, element.value);
-    //  });
+    element.style.backgroundColor = color;
 
     saveNoteBtn.addEventListener("click", () => updateNote(id, element.value));
 
@@ -48,14 +45,18 @@ function createNoteElement(id, content){
 
 function addNote() {
     /* Add new Note */
+
     const notes = getNotes();
     const nObject = {
         id: Math.floor(Math.random() * 100000),
-        content: ""
+        content: "",
+        color: ""
     };
-
-    const nElement = createNoteElement(nObject.id, nObject.content);
+    const nElement = createNoteElement(nObject.id, nObject.content, nObject.color);
     nContainer.insertBefore(nElement, addNoteBtn); 
+
+    nObject.color = (nElement.style.backgroundColor = event.target.style.backgroundColor);
+    //nElement.style.backgroundColor = event.target.style.backgroundColor;
 
     notes.push(nObject); // re-save it locally
     saveNotes(notes);
@@ -79,3 +80,12 @@ function deleteNote(id, element) {
     nContainer.removeChild(element);
 }
 
+// function colour() {
+//     if (window.localStorage.getItem("notetaking-notes")) {
+//       document.getElementById("note-app").style.backgroundColor = window.localStorage.getItem("notetaking-notes");
+//     } else {
+//         console.log("not read");
+//     }
+
+//     console.log("test");
+// }

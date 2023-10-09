@@ -45,7 +45,7 @@ let samoyedImages = [
 // }
 
 var curIndex = 0;
-var imgDuration = 5000;
+var imgDuration = 10000;
 
 function slideShow() {
     
@@ -53,7 +53,7 @@ function slideShow() {
 
     for(let i = 0; i < imgs.length; i++) {
         const randomImg = Math.floor(Math.random() * hamsterImages.length)
-        imgs[i].src = hamsterImages[curIndex];
+        imgs[i].src = hamsterImages[randomImg]; // curIndex?
 
         curIndex++;
 
@@ -88,6 +88,6 @@ for (let i = 0; i < footer.length; i++){
 // do the same for span element
 const span = document.getElementsByTagName("span");
 for (let i = 0; i < span.length; i++){
-    span[i].innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
+    span[i].innerText = "Lorem ipsum dolor sit amet";
     
 }
