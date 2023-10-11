@@ -60,21 +60,27 @@ background-color: #dddddd;
     margin-left: 15px;
 }
 
-#add {
-    display: none;
-}
-#remove {
-    display: none;
-}
 #error {
     display: none;
+    color: #FFEA00;
+    text-align: center;
+    font-size: 25px;
 }
 #name-error {
     display: none;
+    color: #FFEA00;
+    text-align: center;
+    font-size: 25px;
 }
 #num-error {
     display: none;
+    color: #FFEA00;
+    text-align: center;
+    font-size: 25px;
 }
 #email-error {
     display: none;
+    color: #FFEA00;
+    text-align: center;
+    font-size: 25px;
 }

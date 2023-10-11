@@ -32,14 +32,16 @@ class Phone {
     
     }
 
+    // Show alert message when there's an error for 3 seconds
     static Alert(message)
     {
         
         var x=document.getElementById(message);
         x.style.display="block";
-        setTimeout(() => x.style.display='none', 1000);
+        setTimeout(() => x.style.display='none', 3000);
     }
 
+    // Clear fields(name, num, email) when called
     static clearFields() {
     document.querySelector('#name').value = '';
     document.querySelector('#num').value = '';
