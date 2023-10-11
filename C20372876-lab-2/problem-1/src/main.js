@@ -113,3 +113,59 @@ class Phone {
   
     
   });
+
+function sortTable(n) {
+    var table;
+    var rows;
+    var switching;
+    var i;
+    var x;
+    var y;
+    var shouldSwitch;
+    var dir;
+    var switchCount = 0;
+    table = document.getElementById("tbl");
+    switching = true;
+
+    // Set sorting direction to asc
+    dir = "asc";
+
+    // loop to continue until no switching done
+    while(switching) {
+        switching = false;
+        rows = table.rows;
+
+        // loop through table rows minusing the table headers
+        for(i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+
+            // Get two elements to compare, from curr row to next row
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+
+            // Check if two rows should switch, based on asc or desc
+            if (dir == "asc") {
+                if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                } // End inner if
+            } else if (dir == "desc") {
+                if(x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+                } // End if
+            } // End if else 
+        } // End for loop
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+
+            switchCount++;
+        } else {
+            if(switchCount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+            } // End if
+        }// End else
+    } // End while loop
+} // End func
