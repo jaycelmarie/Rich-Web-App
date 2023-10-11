@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Phone Directory</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="display">Phone Directory</h1>
+    <div id="add">Added Successful.</div>
+    <div id="remove">Removed Sucessful.</div>
+    <div id="error">Please Fill in Properly!</div>
+</div>
+    
+    <!-- Form Start -->
+    <form id="num-form">
+        <!-- Name -->
+        <div class="form-group">
+            <input type="text" id="name" class="form">
+        </div>
+        <!-- Phone Number -->
+        <div clas="form-group">
+            <input type="number" id="name" class="form">
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+            <input type="email" id="name" class="form">
+        </div>
+        <!-- Button to Add -->
+        <input type="submit" id="button" value="ADD DETAILS" >
+    </form> 
+
+    <!-- Table Start -->
+    <table>
+        <thead>
+          <tr>
+            <th >Name</th>
+            <th >Phone Number</th>
+            <th >Email</th>
+            <th><i >delete</i></th>
+          </tr>
+        </thead>
+        <tbody id="Phone-list"></tbody>
+      </table>
+
+
+<script src="main.js"></script>
+</body>
+</html>
