@@ -34,10 +34,10 @@ class Phone {
 
     static Alert(message)
     {
-    
-    var x=document.getElementById(message);
-    x.style.display="block";
-    setTimeout(() => x.style.display='none', 1000);
+        
+        var x=document.getElementById(message);
+        x.style.display="block";
+        setTimeout(() => x.style.display='none', 1000);
     }
 
     static clearFields() {
@@ -70,6 +70,7 @@ class Phone {
 
   document.addEventListener('DOMContentLoaded', phoneDirectory.displayBooks);
 
+  // Validation Start
   document.querySelector('#num-form').addEventListener('submit', (e) => {
     e.preventDefault();
   
@@ -78,7 +79,16 @@ class Phone {
     const email = document.querySelector('#email').value;
 
     if(name === '' || num === '' || email == '') {
-      phoneDirectory.Alert("error");
+        phoneDirectory.Alert("error");
+    } else if(name.length >= 20) {
+        phoneDirectory.Alert("name-error");
+        phoneDirectory.clearFields();
+    } else if(isNaN(num)){
+        phoneDirectory.Alert("num-error");
+        phoneDirectory.clearFields();
+    } else if(email.length >= 40) {
+        phoneDirectory.Alert("email-error");
+        phoneDirectory.clearFields();
     } else {
       const book = new Phone(name, num, email);
   
@@ -86,8 +96,8 @@ class Phone {
   
       Directory.addBook(book);
   
-      phoneDirectory.Alert('add');
-  
+      alert('Added Successfully.');
+
       phoneDirectory.clearFields();
     }
   });

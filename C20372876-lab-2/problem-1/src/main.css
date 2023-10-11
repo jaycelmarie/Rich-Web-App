@@ -69,3 +69,12 @@ background-color: #dddddd;
 #error {
     display: none;
 }
+#name-error {
+    display: none;
+}
+#num-error {
+    display: none;
+}
+#email-error {
+    display: none;
+}
