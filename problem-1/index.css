@@ -19,6 +19,8 @@ body{
   border-color: black;
   border: solid 0.5px;
   /* grid-template-columns:repeat(1,1fr); */
+  width: 40px;
+  margin-left: 10px;
 }
 
 

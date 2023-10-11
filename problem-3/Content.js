@@ -45,25 +45,24 @@ let samoyedImages = [
 // }
 
 var curIndex = 0;
-var imgDuration = 10000;
+var imgDuration = 2000;
 
 function slideShow() {
     
     const imgs = document.getElementsByTagName("img");
 
     for(let i = 0; i < imgs.length; i++) {
-        const randomImg = Math.floor(Math.random() * hamsterImages.length)
-        imgs[i].src = hamsterImages[randomImg]; // curIndex?
+        //const randomImg = Math.floor(Math.random() * hamsterImages.length)
+        imgs[i].src = hamsterImages[curIndex]; // curIndex?
         //imgs[i].srcset = hamsterImages[randomImg] + "1.5x" + hamsterImages[randomImg] + "2x";
 
         curIndex++;
 
         if(curIndex == hamsterImages.length) {curIndex = 0;}
-
-        setTimeout("slideShow()", imgDuration);
         //imgs[i].src = hamsterImages[randomImg]
 
     }
+    setTimeout("slideShow()", imgDuration);
 }
 slideShow();
  
