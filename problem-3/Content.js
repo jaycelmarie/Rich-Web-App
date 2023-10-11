@@ -54,6 +54,7 @@ function slideShow() {
     for(let i = 0; i < imgs.length; i++) {
         const randomImg = Math.floor(Math.random() * hamsterImages.length)
         imgs[i].src = hamsterImages[randomImg]; // curIndex?
+        //imgs[i].srcset = hamsterImages[randomImg] + "1.5x" + hamsterImages[randomImg] + "2x";
 
         curIndex++;
 
@@ -91,3 +92,4 @@ for (let i = 0; i < span.length; i++){
     span[i].innerText = "Lorem ipsum dolor sit amet";
     
 }
+
