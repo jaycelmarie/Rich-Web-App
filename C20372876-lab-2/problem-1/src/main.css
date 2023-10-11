@@ -1,0 +1,71 @@
+caption{
+    font-weight: bold;
+    font-size: 20px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+
+.container {
+    background-color: #000080;
+}
+
+.display{
+    text-align: center;
+    color:#bebbbd;
+}
+
+.form {
+    display: grid;
+    float: left;
+    padding: 5px;
+    border: 2px solid blue;
+    margin: 0px 0px 20px 20px;
+}
+.search {
+    padding: 5px;
+    border: 2px solid blue;
+    margin-top: 5px;
+}
+
+
+.search {
+    float: left;
+}
+#num-form {
+    padding: 50px;
+    background-color: #89CFF0;
+    border: 2px solid #000080;
+}
+
+#num2 {
+    float: left;
+}
+
+#button {
+    height: 25px;
+    width: 55px;
+    margin-left: 15px;
+}
+
+#add {
+    display: none;
+}
+#remove {
+    display: none;
+}
+#error {
+    display: none;
+}
