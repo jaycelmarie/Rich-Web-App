@@ -2,48 +2,46 @@
 <html>
 <head>
 <title>Phone Directory</title>
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="src/main.css">
 </head>
 <body>
 <div class="container">
     <h1 class="display">Phone Directory</h1>
     <div id="add">Added Successful.</div>
-    <div id="remove">Removed Sucessful.</div>
-    <div id="error">Please Fill in Properly!</div>
+    <div id="error">Please Fill Details</div>
 </div>
     
     <!-- Form Start -->
     <form id="num-form">
         <!-- Name -->
         <div class="form-group">
-            <input type="text" id="name" class="form">
+            <input type="text" id="name" class="form" placeholder="Enter Name">
         </div>
         <!-- Phone Number -->
         <div clas="form-group">
-            <input type="number" id="name" class="form">
+            <input type="text" id="num" class="form" placeholder="Enter Phone Number">
         </div>
         <!-- Email -->
         <div class="form-group">
-            <input type="email" id="name" class="form">
+            <input type="email" id="email" class="form" placeholder="Enter Email Address">
         </div>
         <!-- Button to Add -->
-        <input type="submit" id="button" value="ADD DETAILS" >
+        <input type="submit" id="button" value="ADD" >
     </form> 
 
     <!-- Table Start -->
     <table>
         <thead>
           <tr>
-            <th >Name</th>
-            <th >Phone Number</th>
-            <th >Email</th>
-            <th><i >delete</i></th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
           </tr>
         </thead>
-        <tbody id="Phone-list"></tbody>
+        <tbody id="Plist"></tbody>
       </table>
 
 
-<script src="main.js"></script>
+<script src="src/main.js"></script>
 </body>
 </html>
