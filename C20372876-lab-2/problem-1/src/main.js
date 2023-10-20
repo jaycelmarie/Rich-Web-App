@@ -79,6 +79,8 @@ class Phone {
     const name = document.querySelector('#name').value;
     const num = document.querySelector('#num').value;
     const email = document.querySelector('#email').value;
+    const validReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const nameReg = /^[a-zA-Z\s]+$/; 
 
     if(name === '' || num === '' || email == '') {
         phoneDirectory.Alert("error");
@@ -91,7 +93,7 @@ class Phone {
     } else if(email.length >= 40) {
         phoneDirectory.Alert("email-error");
         phoneDirectory.clearFields();
-    } else {
+    } else if(name.match(nameReg) && validReg.test(email)) {
       const book = new Phone(name, num, email);
   
       phoneDirectory.addBook(book);
@@ -101,6 +103,9 @@ class Phone {
       alert('Added Successfully.');
 
       phoneDirectory.clearFields();
+    } else {
+      phoneDirectory.Alert("name-error");
+      phoneDirectory.Alert("email-error");
     }
   });
   
@@ -113,6 +118,9 @@ class Phone {
   
     
   });
+
+
+  /* Function to sort out names in Ascending and Descending order */
 
 function sortTable(n) {
     var table;
