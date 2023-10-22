@@ -106,6 +106,7 @@ class Phone {
     } else {
       phoneDirectory.Alert("name-error");
       phoneDirectory.Alert("email-error");
+      phoneDirectory.clearFields();
     }
   });
   
@@ -177,3 +178,37 @@ function sortTable(n) {
         }// End else
     } // End while loop
 } // End func
+
+/* Function to Search for Phone Numbers */
+
+function searchBar(id) {
+  var input;
+  var filter;
+  var table;
+  var tr;
+  var td;
+  var i; 
+  var txtValue;
+
+  const books = Directory.getBooks();
+
+  input = document.getElementById("num2");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tbl");
+  tr = table.getElementsByTagName("tr");
+
+  for(i = 0; i < tr.length; i++) {
+    td = books.filter(books => books.id == id)[0];
+    if(td) {
+      txtValue = td.textcontent || td.innerText;
+      if(txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+// const tNote = unotes.filter(notes => notes.id == id)[0]; // gives array of single element
+
