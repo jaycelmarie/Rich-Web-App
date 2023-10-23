@@ -31,11 +31,14 @@ async function useData() {
     var newArray = [], wordObj;
 
     data.forEach(el => {
-        let body = el.body.split(" ");
+        let body = el.body.split(/[\\\s]+/);
+
+        var result = el.title.split(" ");
 
         // // Get all titles with values > 6
         // if (result.length > 6) {
         //     console.log(el.id);
+        //     console.log(el.title);
         // }
 
         // Show word frequency map for all of the body contents of the posts

@@ -180,35 +180,30 @@ function sortTable(n) {
 } // End func
 
 /* Function to Search for Phone Numbers */
+document.querySelector('#search').addEventListener('submit', (e) => {
+  e.preventDefault(); 
 
-function searchBar(id) {
-  var input;
-  var filter;
-  var table;
-  var tr;
-  var td;
-  var i; 
-  var txtValue;
+  const inputNum = document.querySelector('#num2').value;
+  const table = document.querySelector('#search-results');
 
-  const books = Directory.getBooks();
+  let books = Directory.getBooks();
+  let searched = false;
 
-  input = document.getElementById("num2");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("tbl");
-  tr = table.getElementsByTagName("tr");
+  // Search number 
+  books.forEach(book => {
+      if(book.num == inputNum) {
+          PhoneDirectory.findBook(book);
 
-  for(i = 0; i < tr.length; i++) {
-    td = books.filter(books => books.id == id)[0];
-    if(td) {
-      txtValue = td.textcontent || td.innerText;
-      if(txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
+          table.style.display = 'table';
+          noResult.style.display = 'none';
+
+          searched = true;
       }
-    }
+  });
+  
+  if (!searched) {
+      const noResult = document.querySelector('#noResult');
+      noResult.style.display = 'block';
   }
-}
 
-// const tNote = unotes.filter(notes => notes.id == id)[0]; // gives array of single element
-
+});
