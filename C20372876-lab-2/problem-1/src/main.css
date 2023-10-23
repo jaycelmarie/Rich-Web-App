@@ -12,6 +12,7 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    border-collapse: collapse;
 }
 
 th {
@@ -35,9 +36,9 @@ tr:nth-child(odd) {
     display: grid;
     float: left;
     padding: 5px;
-    border: 2px solid blue;
-    margin: 0px 0px 20px 20px;
+    margin: 0px 0px 20px 150px;
 }
+
 .search {
     padding: 5px;
     border: 2px solid blue;
@@ -48,8 +49,9 @@ tr:nth-child(odd) {
 .search {
     float: left;
 }
+
 #num-form {
-    padding: 50px;
+    padding: 120px;
     background-color: #89CFF0;
     border: 2px solid #000080;
 }
@@ -88,3 +90,10 @@ tr:nth-child(odd) {
     text-align: center;
     font-size: 25px;
 }
+#no-result {
+    display: none;
+    color: #FFEA00;
+    text-align: center;
+    font-size: 25px;
+}
+

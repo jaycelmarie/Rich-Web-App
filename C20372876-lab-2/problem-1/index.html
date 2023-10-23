@@ -11,6 +11,7 @@
     <div id="name-error">!! Name may contain Alphabets/Space AND must be less than or equal to 20 characters </div>
     <div id="num-error">!! Phone numbers MUST only be in numeric value !!</div>
     <div id="email-error">!! Email MUST less than or equal to 40 characters !!</div>
+    <div id="no-result">!! NO RESULT !!</div>"
 </div>
     
     <!-- Form Start -->
@@ -34,7 +35,17 @@
     <!-- Search Bar for Number -->
     <div class="search">
         <p>Search contact by Mobile No:</p>
-        <input type="text" id="num2" class="form2" placeholder="Enter Phone Number">
+        <input type="text" id="num2" placeholder="Enter Phone Number" onkeyup="search()">
+        <!-- Table Start -->
+    <!-- <table id="tbl2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+    </table> -->
     </div>
 
     <!-- Table Start -->
