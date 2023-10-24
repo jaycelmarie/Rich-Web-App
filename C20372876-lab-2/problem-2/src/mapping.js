@@ -18,9 +18,9 @@ function request(url) {
                 resolve(data);
             });
         })
-        .catch(function(err) {
-            console.log("Error:", err);
-            reject(err);
+        .catch(function(error) {
+            console.log("Error:", error);
+            reject(error);
         });
     })
     
@@ -28,38 +28,26 @@ function request(url) {
 
 async function useData() {
     const data = await request(api);
-    var newArray = [], wordObj;
+    var newArr = [], obj;
 
     data.forEach(el => {
         let body = el.body.split(/[\\\s]+/);
 
-        var result = el.title.split(" ");
-
-        // // Get all titles with values > 6
-        // if (result.length > 6) {
-        //     console.log(el.id);
-        //     console.log(el.title);
-        // }
-
-        // Show word frequency map for all of the body contents of the posts
+        // map through body contents of posts
         body.map((word) => {
 
-            // Check if word exists in the array using filter()
-            wordObj = newArray.filter((w) => {
-                return w.text == word;  // Return 
+            obj = newArr.filter((w) => {
+                return w.text == word; 
             })
 
-            // If it does exist (i.e., there's length)
-            if (wordObj.length) {
-                wordObj[0].size += 1;   // Increment its size
+            if (obj.length) {
+                obj[0].size += 1;   
             } else {
-                newArray.push({text: word, size: 1});   // Push new word 
+                newArr.push({text: word, size: 1});  
             };
         });        
     });
-
-    console.log(newArray);
-    
+    console.log(newArr);
 };
 
 useData();
