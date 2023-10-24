@@ -8,10 +8,11 @@
 <div class="container">
     <h1 class="display">Phone Directory</h1>
     <div id="error">!! Please fill in ALL Details !!</div>
-    <div id="name-error">!! Name may contain Alphabets/Space AND must be less than or equal to 20 characters </div>
-    <div id="num-error">!! Phone numbers MUST only be in numeric value !!</div>
+    <div id="name-error">!! Name must be less than or equal to 20 characters !!</div>
+    <div id="num-error">!! Phone numbers MUST only be in numeric value and EQUAL to 10 Characters !!</div>
     <div id="email-error">!! Email MUST less than or equal to 40 characters !!</div>
-    <div id="no-result">!! NO RESULT !!</div>"
+    <div id="noResult">!! NO RESULT !!</div>
+    <div id="regex-error">!! Please ensure name and email are correct !!</div>
 </div>
     
     <!-- Form Start -->
@@ -29,7 +30,7 @@
             <input type="email" id="email" class="form" placeholder="Enter Email Address">
         </div>
         <!-- Button to Add -->
-        <input type="submit" id="button" value="ADD" >
+        <input type="submit" id="button" value="ADD CONTACT" >
     </form> 
 
     <!-- Search Bar for Number -->

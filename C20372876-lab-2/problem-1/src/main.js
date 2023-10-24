@@ -88,7 +88,7 @@ document.querySelector('#num-form').addEventListener('submit', (e) => {
   } else if(name.length >= 20) {
       phoneDirectory.Alert("name-error");
       phoneDirectory.clearFields();
-  } else if(isNaN(num) || num.length < 10){
+  } else if(isNaN(num) || num.length < 10 || num.length > 10){
       phoneDirectory.Alert("num-error");
       phoneDirectory.clearFields();
   } else if(email.length >= 40) {
@@ -105,8 +105,7 @@ document.querySelector('#num-form').addEventListener('submit', (e) => {
 
     phoneDirectory.clearFields();
   } else {
-    phoneDirectory.Alert("name-error");
-    phoneDirectory.Alert("email-error");
+    phoneDirectory.Alert("regex-error");
     phoneDirectory.clearFields();
   }
 });
@@ -181,7 +180,7 @@ function search() {
   var counter = tr.length-1;
   
   // displays no result 
-  let noRes = document.getElementById("no-result");
+  let noRes = document.getElementById("noResult");
   
   for(i = 0; i < tr.length; i++) {
 

@@ -62,35 +62,10 @@ tr:nth-child(odd) {
 
 #button {
     height: 25px;
-    width: 55px;
     margin-left: 15px;
 }
 
-#error {
-    display: none;
-    color: #FFEA00;
-    text-align: center;
-    font-size: 25px;
-}
-#name-error {
-    display: none;
-    color: #FFEA00;
-    text-align: center;
-    font-size: 25px;
-}
-#num-error {
-    display: none;
-    color: #FFEA00;
-    text-align: center;
-    font-size: 25px;
-}
-#email-error {
-    display: none;
-    color: #FFEA00;
-    text-align: center;
-    font-size: 25px;
-}
-#no-result {
+#error, #name-error, #num-error, #email-error, #noResult, #regex-error {
     display: none;
     color: #FFEA00;
     text-align: center;
