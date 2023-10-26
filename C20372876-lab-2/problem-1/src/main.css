@@ -2,6 +2,11 @@ caption{
     font-weight: bold;
     font-size: 20px;
 }
+
+p {
+    display: inline-block;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -23,51 +28,40 @@ tr:nth-child(odd) {
     background-color: #f2f2f2;;
 }
 
-.container {
-    background-color: #000080;
-}
-
 .display{
     text-align: center;
-    color:#bebbbd;
+    color: black;
 }
 
-.form {
-    display: grid;
-    float: left;
+.form-group{
+    display: block;
     padding: 5px;
-    margin: 0px 0px 20px 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .search {
     padding: 5px;
-    border: 2px solid blue;
     margin-top: 5px;
-}
-
-
-.search {
-    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
 }
 
 #num-form {
-    padding: 120px;
-    background-color: #89CFF0;
-    border: 2px solid #000080;
+    padding: 25px;
+    background-color: #a6dae7;
+    border: 2px solid #467987;
+    border-radius: 15px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#num2 {
-    float: left;
-}
-
-#button {
-    height: 25px;
-    margin-left: 15px;
-}
 
 #error, #name-error, #num-error, #email-error, #noResult, #regex-error {
     display: none;
-    color: #FFEA00;
+    color: #c53205;
     text-align: center;
     font-size: 25px;
 }
