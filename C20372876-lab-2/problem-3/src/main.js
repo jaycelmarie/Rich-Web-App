@@ -42,8 +42,22 @@ form.addEventListener('submit', function(e){
     .then((data) => {
         console.log(data)
 
+        const tbl = document.querySelector("#result2");
+        const row = document.getElementById('list');
+
+        if (row.length == 0) {
+            console.log(`No repos found`)
+        } else {
+            const r = document.getElementById('list');
+            while (r.firstChild) {
+                r.removeChild(r.firstChild);
+            }
+        }
+
         for(let i = 0; i < data.length; i++) {
-            document.getElementById("result2").innerHTML += `
+ 
+            row.innerHTML += `
+
             <tr class="title">
                 <th>Title </th>
                 <td>${data[i].name}</td>
@@ -52,7 +66,10 @@ form.addEventListener('submit', function(e){
                 <th>Description</th>
                 <td>${data[i].description ? data[i].description : "N/A"}</td>
             </tr>
-            `
+            `;
+            
+            tbl.appendChild(row);
+         
         }
         
     }) 
