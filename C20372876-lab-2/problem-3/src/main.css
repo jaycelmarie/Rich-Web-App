@@ -2,19 +2,21 @@
     box-sizing: border-box;
 }
 /* Search Bar */
-.form-control {
-    border:solid 1px green;
-    height: 20px;
+.form-group {
     line-height: 20px;
     vertical-align: middle;
-    display: inline-block;
+    margin-right: 15%;
+}
+
+.form-control {
+    height: 30px;
+    width: 40%;
+    border: solid 1px rgb(0, 0, 0);
 }
 .btn {
-    border: solid 1px green;
-    height: 22px;
+    border: solid 1px rgb(0, 0, 0);
     line-height: 22px;
-    vertical-align: middle;
-    display: inline-block;
+    border-radius: 25px;
 }
 
 
@@ -26,8 +28,9 @@
 
 .column {
     float: left;
-    width: 50%;
+    width: 30%;
     padding: 5px;
+    display:block;
 }
 
 .row::after {
@@ -79,18 +82,19 @@ caption {
 }
 
 img {
-    width: 90%;
-    height: 100%;
-    padding: 15px;
-    margin-left: 30px;
+    width: 50%;
+    height: auto;
+    padding: 5px;
+    margin-left: 30%;
+    margin-right: 50%;
 }
 
-.table-wrapper {
-    height: 50%;
+#table-wrapper {
+    height: 360px;
 }
 
 .add-scroll {
-    overflow: hidden;
+    overflow: auto;
     overflow-y: scroll;
-    height: 30%;
+    height: auto;
 }
