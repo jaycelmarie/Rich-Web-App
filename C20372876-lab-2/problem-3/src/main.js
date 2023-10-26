@@ -12,7 +12,7 @@ form.addEventListener('submit', function(e){
     .then((data) => {
         console.log(data)
 
-        document.getElementById("result").innerHTML += `
+        document.getElementById("result").innerHTML = `
             <img src="${data.avatar_url}"/> 
             <tr>
                 <th>Name: </th>
@@ -37,7 +37,6 @@ form.addEventListener('submit', function(e){
         `
     })
 
-
     fetch("https://api.github.com/users/"+origName+"/repos")
     .then((result) => result.json())
     .then((data) => {
@@ -56,7 +55,7 @@ form.addEventListener('submit', function(e){
             `
         }
         
-    })
-
+    }) 
 
 });
+
