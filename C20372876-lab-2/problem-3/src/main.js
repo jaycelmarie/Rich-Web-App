@@ -73,7 +73,7 @@ form.addEventListener('submit', function(e){
         }
         
         let rowCount = document.getElementById('table-wrapper');
-        if(document.querySelectorAll('#list tr').length >= 10) {
+        if(document.querySelectorAll('#list tr').length > 10) {
             console.log('Found more than 5 repos');
             rowCount.style.display = 'block';
             rowCount.classList.add('add-scroll');
