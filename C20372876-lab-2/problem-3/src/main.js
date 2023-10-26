@@ -14,23 +14,23 @@ form.addEventListener('submit', function(e){
 
         document.getElementById("result").innerHTML = `
             <img src="${data.avatar_url}"/> 
-            <tr>
+            <tr class="tbl1">
                 <th>Name: </th>
                 <td>${data.name ? data.name : "N/A"}</td>
             </tr>
-            <tr>
+            <tr class="tbl1">
                 <th>Username: </th>
                 <td>${data.login ? data.login : "N/A"}</td>
             </tr>
-            <tr>
+            <tr class="tbl1">
                 <th>Email: </th>
                 <td>${data.email ? data.email : "N/A"}</td>
             </tr>
-            <tr>
+            <tr class="tbl1">
                 <th>Location: </th>
                 <td>${data.location ? data.location : "N/A"}</td>
             </tr>
-            <tr>
+            <tr class="tbl1">
                 <th>Number of Gists: </th>
                 <td>${data.public_gists ? data.public_gists : "N/A"}</td>
             </tr>
@@ -44,7 +44,7 @@ form.addEventListener('submit', function(e){
 
         for(let i = 0; i < data.length; i++) {
             document.getElementById("result2").innerHTML += `
-            <tr>
+            <tr class="title">
                 <th>Title </th>
                 <td>${data[i].name}</td>
             </tr>
