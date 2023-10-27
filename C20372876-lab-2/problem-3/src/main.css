@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
 }
+
+h2 {
+    text-align: center;
+    margin-right: 50px;
+}
 /* Search Bar */
 .form-group {
     line-height: 20px;
@@ -19,16 +24,20 @@
     border-radius: 25px;
 }
 
-
 /* Table */
 .row {
     margin-left: -5px;
     margin-right: -5px;
+    background-color: rgb(244, 161, 161);
+    border-radius: 25px;
+    padding: 5px;
+    margin-top: 5px;
+    width: 80%;
 }
 
 .column {
     float: left;
-    width: 30%;
+    width: 50%;
     padding: 5px;
     display:block;
 }
@@ -47,6 +56,7 @@ table {
     border-spacing: 0;
     border: 2px solid rgb(200, 200, 200);
     letter-spacing: 1px;
+    background-color: #fff;
 }
 
 th, td {
@@ -98,3 +108,4 @@ img {
     overflow-y: scroll;
     height: auto;
 }
+
