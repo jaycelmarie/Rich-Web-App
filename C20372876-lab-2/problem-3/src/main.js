@@ -72,6 +72,7 @@ form.addEventListener('submit', function(e){
          
         }
         
+        // As I have a tr per td, I have to place 10 per td to get 5 repos
         let rowCount = document.getElementById('table-wrapper');
         if(document.querySelectorAll('#list tr').length > 10) {
             console.log('Found more than 5 repos');
