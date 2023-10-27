@@ -29,7 +29,7 @@ function request(url) {
 async function useData() {
     const data = await request(api);
     
-    data.forEach(el => {
+    data.map(el => {
 
         var result = el.title.split(" ");
 

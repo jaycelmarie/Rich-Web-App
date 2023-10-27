@@ -30,7 +30,7 @@ async function useData() {
     const data = await request(api);
     var newArr = [], obj;
 
-    data.forEach(el => {
+    data.map(el => {
         let body = el.body.split(/[\\\s]+/);
 
         // map through body contents of posts
