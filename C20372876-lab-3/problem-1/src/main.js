@@ -1,21 +1,21 @@
 document.addEventListener('DomContentLoaded', () => {
-    const { Observable, fromEvent} = rxjs;
- 
+    const { fromEvent, interval, takeUntil, switchMap, tap } = rxjs;
+
     const nContainer = document.getElementById("note-app");
     const addNoteBtn = nContainer.querySelector(".add-note");
     const saveNoteBtn = nContainer.querySelector(".save-note");
 
     // Add New Note
-    const add = rxjs.Observable.fromEvent(addNoteBtn, 'click');
-    add.subscribe(() => addNote());
+    const add$ = fromEvent(addNoteBtn, 'click');
+    add$.subscribe(() => addNote());
 
     // Save Note
-    const save = rxjs.Observable.fromEvent(saveNoteBtn, 'click');
-    save.subscribe(() => updateNote());
+    const save$ = fromEvent(saveNoteBtn, 'click');
+    save$.subscribe(() => updateNote());
 
     // Delete Note
-    const del = rxjs.Observable.fromEvent(nContainer, 'dblclick');
-    del.subscribe((event) => {
+    const del$ = fromEvent(nContainer, 'dblclick');
+    del$.subscribe((event) => {
         const nElement = event.target;
         const id = nElement.nObject.id;
         const confirm = confirm("Please Confirm you'd like to delete note");
@@ -25,14 +25,14 @@ document.addEventListener('DomContentLoaded', () => {
         }
     });
 
-});
+    // Get notes
+    getNotes().forEach((notes) => {
+        const nElement = createNoteElement(notes.id, notes.content, notes.color);
+        nElement.nObject = notes;
+        nContainer.insertBefore(nElement, addNoteBtn); // insert note before add button
+    }); // End of getNotes
 
-// Get notes
-getNotes().forEach((notes) => {
-    const nElement = createNoteElement(notes.id, notes.content, notes.color);
-    nElement.nObject = notes;
-    nContainer.insertBefore(nElement, addNoteBtn); // insert note before add button
-});
+}); // End of Dom
 
 
 

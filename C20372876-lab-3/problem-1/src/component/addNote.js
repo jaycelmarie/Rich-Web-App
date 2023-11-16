@@ -10,10 +10,13 @@ function addNote() {
         color: ""
     };
     const nElement = createNoteElement(nObject.id, nObject.content, nObject.color);
-    nContainer.insertBefore(nElement, addNoteBtn); 
 
     nObject.color = (nElement.style.backgroundColor = event.target.style.backgroundColor);
     //nElement.style.backgroundColor = event.target.style.backgroundColor;
+
+    nElement.nObject = nObject;
+    
+    nContainer.insertBefore(nElement, addNoteBtn); 
 
     notes.push(nObject); // re-save it locally
     saveNotes(notes);
