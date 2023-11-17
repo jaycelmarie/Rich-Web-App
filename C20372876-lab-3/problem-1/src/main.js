@@ -5,6 +5,15 @@ document.addEventListener('DomContentLoaded', () => {
     const addNoteBtn = nContainer.querySelector(".add-note");
     const saveNoteBtn = nContainer.querySelector(".save-note");
 
+    // Get notes
+    getNotes().forEach((notes) => {
+    const nElement = createNoteElement(notes.id, notes.content, notes.color);
+    nElement.nObject = notes;
+    nContainer.insertBefore(nElement, addNoteBtn); // insert note before add button
+    
+    }); // End of getNotes
+
+
     // Add New Note
     const add$ = fromEvent(addNoteBtn, 'click');
     add$.subscribe(() => addNote());
@@ -25,13 +34,7 @@ document.addEventListener('DomContentLoaded', () => {
         }
     });
 
-    // Get notes
-    getNotes().forEach((notes) => {
-        const nElement = createNoteElement(notes.id, notes.content, notes.color);
-        nElement.nObject = notes;
-        nContainer.insertBefore(nElement, addNoteBtn); // insert note before add button
-    }); // End of getNotes
-
+ 
 }); // End of Dom
 
 
