@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
-<link rel="stylesheet" href="home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Example</title>
 </head>
 <body>
+  <div>
+    <label for="noteContent">Enter Note Content:</label>
+    <input type="text" id="noteContent">
+    <label for="parentNote">Select Parent Note (optional):</label>
+    <select id="parentNote">
+      <option value="">None</option>
+      <!-- Add options dynamically using JavaScript -->
+    </select>
+    <button onclick="createNote()">Create Note</button>
+  </div>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-<p> Hello World! </p>
+  <div>
+    <h2>Notes:</h2>
+    <ul id="notesList"></ul>
+  </div>
 
-
-<script src="home.js"></script>
+  <script src="https://unpkg.com/rxjs@7.6.0/dist/bundles/rxjs.umd.min.js"></script>
+  <script src="src/main.js"></script>
 </body>
 </html>
