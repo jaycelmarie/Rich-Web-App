@@ -17,11 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
         this.parentSubject.next(parentNote);
       }
 
-      deleteNote() {
-        this.parentSubject.next(); // Notify parent to delete this note from its children
-
-        // delete child notes recursively
-        this.children.forEach(child => child.deleteNote());
+      deleteNote(childId) {
+        const childIndex = this.children.findIndex(child => child.id === childId);
+        if (childIndex !== -1) {
+          // Unsubscribe from the child's parentSubject
+          this.children[childIndex].parentSubject.unsubscribe();
+          this.children.splice(childIndex, 1);
+        }
       }
     } // End NoteList
 
@@ -103,36 +105,38 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       } // End of displayParent
 
-      // Display child notes
-        function displayChild(children, parentElement) {
-            children.forEach(child => {
-            const listItem = document.createElement('li');
-            listItem.textContent = child.content;
-    
-            if (child.children.length > 0) {
-                // Display child notes recursively
-                const childList = document.createElement('ul');
-                displayChild(child.children, childList);
-                listItem.appendChild(childList);
-            }
-    
-            parentElement.appendChild(listItem);
-            });
-        } // end displayChild
+    // Display child notes
+    function displayChild(children, parentElement) {
+        children.forEach(child => {
+        const listItem = document.createElement('li');
+        listItem.textContent = child.content;
 
-        // Delete parent note and its children
-        function deleteNote(noteId) {
-            const noteToDelete = notes.find(note => note.id === noteId);
-    
-            if (noteToDelete) {
-                const index = notes.indexOf(noteToDelete);
-                if (index !== -1) {
-                    notes.splice(index, 1);
-                    // edit dropdown to remove the parent thats been removed in list
-                    const parentSelect = document.getElementById('parentNote');
-                    parentSelect.innerHTML = '<option value="">None</option>';
-                    optionChoice();
-                } // End of inner if
-            } // End of outer if
-        } // End of deleteNote
+        if (child.children.length > 0) {
+            // Display child notes recursively
+            const childList = document.createElement('ul');
+            displayChild(child.children, childList);
+            listItem.appendChild(childList);
+        }
+
+        parentElement.appendChild(listItem);
+        });
+    } // end displayChild
+
+    // Delete parent note and its children
+    function deleteNote(noteId) {
+        const noteToDelete = notes.find(note => note.id === noteId);
+
+        if (noteToDelete) {
+            const index = notes.indexOf(noteToDelete);
+            if (index !== -1) {
+                // Unsubscribe from the parent's subject
+                notes[index].parentSubject.unsubscribe();
+                notes.splice(index, 1);
+                // edit dropdown to remove the parent thats been removed in list
+                const parentSelect = document.getElementById('parentNote');
+                parentSelect.innerHTML = '<option value="">None</option>';
+                optionChoice();
+            } // End of inner if
+        } // End of outer if
+    } // End of deleteNote
 });
