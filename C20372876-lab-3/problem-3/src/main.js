@@ -48,10 +48,22 @@ document.addEventListener("DOMContentLoaded", function() {
           notes.push(newNote);
         }
 
-        // Clear the input fields
-        contentInput.value = '';
-
+        // Clear and repopulate the parentNote dropdown with existing notes
+        parentSelect.innerHTML = '<option value="">None</option>';
+        optionChoice();
 
       }
     }; // End createNote()
+
+    // optionChoice - adds parent note onto options so child can choose a parent
+    function optionChoice() {
+        const parentSelect = document.getElementById('parentNote');
+  
+        notes.forEach(note => {
+          const option = document.createElement('option');
+          option.value = note.id;
+          option.textContent = note.content;
+          parentSelect.appendChild(option);
+        });
+    } // End of optionChoice
 });
