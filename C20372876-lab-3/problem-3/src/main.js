@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const notes = []; // Array to store created notes
 
+    // window. is a transformation operator that periodically subdivides
+    // the items from an Observable into a window and emit the windows 
+    // rather than emitting the items one at a time
     window.createNote = function() {
       const contentInput = document.getElementById('content');
       const parentSelect = document.getElementById('parentNote');

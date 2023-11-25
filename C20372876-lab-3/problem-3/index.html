@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/main.css">
   <title>Note</title>
 </head>
 <body>
-  <div>
-    <label for="content">Note:</label>
+
+    <!-- Create note -->
+  <div class="note-body">
+    <label id="notes" for="content">Note:</label>
     <input type="text" id="content">
     <label for="parentNote">Select Parent:</label>
     <select id="parentNote">
@@ -16,6 +19,7 @@
     <button onclick="createNote()">Create Note</button>
   </div>
 
+  <!-- Display Notes  -->
   <div>
     <h2>Notes:</h2>
     <ul id="parentList"></ul>

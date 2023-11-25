@@ -1,0 +1,36 @@
+body {
+    background-color:rgb(237, 209, 247);
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    padding: 2px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #88b8d4;
+    border: none;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+  }
+
+.note-body{
+    margin-top: 10px;
+}
+
+#notes{
+    text-align: center;
+}
