@@ -7,12 +7,11 @@
 </head>
 <body>
   <div>
-    <label for="noteContent">Enter Note Content:</label>
-    <input type="text" id="noteContent">
-    <label for="parentNote">Select Parent Note (optional):</label>
+    <label for="content">Note:</label>
+    <input type="text" id="content">
+    <label for="parentNote">Select Parent:</label>
     <select id="parentNote">
-      <option value="">None</option>
-      <!-- Add options dynamically using JavaScript -->
+      <option value=""></option>
     </select>
     <button onclick="createNote()">Create Note</button>
   </div>
