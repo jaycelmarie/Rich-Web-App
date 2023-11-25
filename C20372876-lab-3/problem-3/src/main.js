@@ -7,24 +7,24 @@ document.addEventListener("DOMContentLoaded", function() {
         this.content = content;
         this.children = [];
         this.parentSubject = new Subject();
-      }
+      } // End constructor
 
       addChild(childNote) {
         this.children.push(childNote);
-      }
+      } // End addChild
 
       setParent(parentNote) {
         this.parentSubject.next(parentNote);
-      }
+      } // End setParent
 
       deleteNote(childId) {
         const childIndex = this.children.findIndex(child => child.id === childId);
         if (childIndex !== -1) {
-          // Unsubscribe from the child's parentSubject
+          // Unsubscribe 
           this.children[childIndex].parentSubject.unsubscribe();
           this.children.splice(childIndex, 1);
-        }
-      }
+        } // End if
+      } // End deleteNote
     } // End NoteList
 
     const notes = []; // Array to store created notes
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (noteToDelete) {
             const index = notes.indexOf(noteToDelete);
             if (index !== -1) {
-                // Unsubscribe from the parent's subject
+                // Unsubscribe from the parent
                 notes[index].parentSubject.unsubscribe();
                 notes.splice(index, 1);
                 // edit dropdown to remove the parent thats been removed in list
