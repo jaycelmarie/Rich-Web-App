@@ -1,0 +1,16 @@
+body {
+    background-color: #eba0a0 !important;
+}
+
+#start {
+    height: 15%;
+    width: 90%;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color:rgb(141, 217, 240);
+    color: rgb(0, 0, 0);
+}
+
+.left {
+    font-size: 40px;
+}
