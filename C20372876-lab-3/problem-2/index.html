@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
-<link rel="stylesheet" href="src/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Countdown RXJS</title>
+    <link rel="stylesheet" href="src/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container mt-4">
+        <div class="row main-top">
+            <div class="col-md-4 offset-md-4">
+                <div class="text-center">
+                    <div class="form-row align-items-center">
+                        <div class="col">
+                            <input type="number" id="hr" class="form-control" placeholder="h">
+                        </div>
+                        <div class="col-auto colons">:</div>
+                        <div class="col">
+                            <input type="number" id="min" class="form-control" placeholder="m">
+                        </div>
+                        <div class="col-auto colons">:</div>
+                        <div class="col">
+                            <input type="number" id="sec" class="form-control" placeholder="s">
+                        </div>
+                    </div>
+                    <button id="start" class="btn btn-secondary mt-4">Start</button>
+                </div>
+                <div id="timer" class="mt-4 text-center">
+                    <div class="time-left">
+                        <span id="hrs">00</span> : <span id="mins">00</span> : <span id="secs">00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="timer"></div>
+    </div>
 
-
-<script src="src/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.8.1/rxjs.umd.min.js"></script>
+    <script src="src/main.js"></script>
 </body>
 </html>
