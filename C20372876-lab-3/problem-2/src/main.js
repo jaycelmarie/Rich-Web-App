@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const minute = document.getElementById("mins");
     const second = document.getElementById("secs");
     
-    const timer = document.getElementById('timer');
+    const timer = document.getElementById('timer-left');
 
     const startBtn = document.getElementById("start");
     const startClick$ = rxjs.fromEvent(startBtn, 'click');
