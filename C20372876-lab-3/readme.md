@@ -20,13 +20,19 @@ networking over, say, promises? And what do you think are the downsides?
 RxJS libraries are particularly useful in handling asynchonous network responses to API requests. 
 
 - Import RxJS and create observables - an observable represents a stream of data over time.
-
+- Apply operators like filter, map etc. to transform or combine observables.
+e.g 
 ``` 
-import { Observable, fromEvent } = 'rxjs'; 
-
+import { Observable, fromEvent, map } = 'rxjs'; 
 ```
 
 - Use the ajax function from RxJS to make HTTP Requests. it will return an observation that emits the response.
 - Subscribe to the observable to handle the response or any errors it catches.
 
-
+Benefits:
+1. Declarative:
+    Operators can be used in a declarative manner to express asynchoronous operations in RxJS. It leads to a concise and readable code compared to often call-backs / nested promises.
+2. Event Handling:
+    It's well suited for handling events and data streams over time. It's a suitable approach for rich web applications where user interaction, updates or continous data streams are involved.
+3. Composability:
+    Observables are composable - it is easily combined and transformed. It becomes convenient to build complex asynchronous workflows by chaining operators.
