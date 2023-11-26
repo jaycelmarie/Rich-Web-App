@@ -42,6 +42,19 @@ Downsides:
 2. For simple asynchronous operations, the use of promises is more straightforward than setting up observables and pipelines with RxJS. RxJS Libraries full power might not be necessary in every scenario.
 3. The overuse of RxJS without a clear benefit can lead to code complexity over using tools like promises.
 
+
 3. Consider three asynchronous tasks, A,B & C. What are the consequences of these
 functions sharing global state? What is a good practice to alleviate any problems
 associated with this?
+
+Consequences:
+- Race conditions:
+    - Asynchronous tasks may run concurrently which can possiblity lead to race conditions. Race conditions is an undesirable situation that occurs when a device or system attempts to perform two or more operations at the same time. Results may be that applications can create unpredictable behavior or even data corruption.
+- Testing Difficulty:
+    - Testing applications becomes challenging when asynchronous tasks share a global state. Individual code block testing can become complex and writing unit tests for all possible interleaving of tasks can become cumbersome.
+
+Good Practice to alleviate problems:
+- Encapsulation:
+    - Data encapsulation might be useful instead of heavily relying on global state. Each task will contain their own variable and data structure, minimizing the risk of unintended interactions.
+- Local Caching:
+    - Consider using local caching within the scope of each task. It allows tasks to maintain their own caches without interfering with others
