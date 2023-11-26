@@ -13,6 +13,7 @@ Streams and the observer pattern share the same facility of communicating and in
 Streaming can be used to handle the continous flow of edits between users, ensuring that the changes made are synchonized in real-time without the need for manual refreshes. It simplifies workflows and greatly enhances readability of your code. In some scenarios where a developer need to handle asynchorous events or notifications, Observer Pattern can greatly decouple components - therefore making it easier to manage asynchoronous behaviour in code.
 
 ################################################
+
 2. Assume that you are building an interface to an API in your Rich Web App. Describe in
 detail how you could use the RxJS library to handle asynchronous network responses to
 API requests. In your opinion, what are the benefits to using a streams library for
@@ -44,6 +45,7 @@ Downsides:
 3. The overuse of RxJS without a clear benefit can lead to code complexity over using tools like promises.
 
 ################################################
+
 3. Consider three asynchronous tasks, A,B & C. What are the consequences of these
 functions sharing global state? What is a good practice to alleviate any problems
 associated with this?
