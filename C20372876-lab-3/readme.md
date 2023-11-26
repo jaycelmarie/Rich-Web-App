@@ -17,6 +17,16 @@ detail how you could use the RxJS library to handle asynchronous network respons
 API requests. In your opinion, what are the benefits to using a streams library for
 networking over, say, promises? And what do you think are the downsides?
 
+RxJS libraries are particularly useful in handling asynchonous network responses to API requests. 
 
+- Import RxJS and create observables - an observable represents a stream of data over time.
+
+``` 
+import { Observable, fromEvent } = 'rxjs'; 
+
+```
+
+- Use the ajax function from RxJS to make HTTP Requests. it will return an observation that emits the response.
+- Subscribe to the observable to handle the response or any errors it catches.
 
 
