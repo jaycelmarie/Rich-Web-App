@@ -19,7 +19,7 @@ detail how you could use the RxJS library to handle asynchronous network respons
 API requests. In your opinion, what are the benefits to using a streams library for
 networking over, say, promises? And what do you think are the downsides?
 
-RxJS libraries are particularly useful in handling asynchonous network responses to API requests. 
+RxJS libraries are particularly useful in handling asynchronous network responses to API requests. 
 
 - Import RxJS and create observables - an observable represents a stream of data over time.
 - Apply operators like filter, map etc. to transform or combine observables.
@@ -60,4 +60,4 @@ Good Practice to alleviate problems:
 - Encapsulation:
     - Data encapsulation might be useful instead of heavily relying on global state. Each task will contain their own variable and data structure, minimizing the risk of unintended interactions.
 - Local Caching:
-    - Consider using local caching within the scope of each task. It allows tasks to maintain their own caches without interfering with others
+    - Consider using local caching within the scope of each task. It allows tasks to maintain their own caches without interfering with others.
