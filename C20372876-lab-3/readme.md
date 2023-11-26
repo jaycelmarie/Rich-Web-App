@@ -36,3 +36,12 @@ Benefits:
     It's well suited for handling events and data streams over time. It's a suitable approach for rich web applications where user interaction, updates or continous data streams are involved.
 3. Composability:
     Observables are composable - it is easily combined and transformed. It becomes convenient to build complex asynchronous workflows by chaining operators.
+
+Downsides:
+1. Beginner reactive programmers might spend more time trying to understand RxJS as there needs a level of understanding Observables, Operators and reactive paradigm.
+2. For simple asynchronous operations, the use of promises is more straightforward than setting up observables and pipelines with RxJS. RxJS Libraries full power might not be necessary in every scenario.
+3. The overuse of RxJS without a clear benefit can lead to code complexity over using tools like promises.
+
+3. Consider three asynchronous tasks, A,B & C. What are the consequences of these
+functions sharing global state? What is a good practice to alleviate any problems
+associated with this?
