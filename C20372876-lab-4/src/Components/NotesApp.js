@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { LoginContext } from "../Contexts/LoginContext";
 import '../main.css';
 
 function NotesApp() {
   const [notes, setNotes] = useState([]);
+  const { username } = useContext(LoginContext);
   
   useEffect(() => {
     // Load notes from local storage 
@@ -52,7 +54,7 @@ function NotesApp() {
     <>
           {/* Show Profile */}
           <h1> Profile </h1>
-          <h2> Welcome </h2>
+          <h2> Welcome {username} </h2>
 
           <div id="note-app">
               {notes.map((note) => (
