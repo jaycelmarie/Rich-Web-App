@@ -8,6 +8,7 @@ function Login() {
 
     return(
         <>
+            <label for="uname"><b>Username</b></label>
             <input
                 type="text"
                 placeholder="Username"
@@ -15,11 +16,11 @@ function Login() {
                     setUsername(event.target.value);
                 }}
             />
-            <input type="text" placeholder="Password"/>
-            <button onClick={() => {setShowProfile(true)}}>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Password"/>
+            <button id="loginbtn" onClick={() => {setShowProfile(true)}}>
             LOGIN
             </button>
-
         </>
     );
 }

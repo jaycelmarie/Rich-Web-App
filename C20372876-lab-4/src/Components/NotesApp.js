@@ -150,7 +150,7 @@ function NotesApp() {
               </div>
           </div></>
   );
-} // End of App
+} // End of NotesApp
 
 const Note = ({ id, content, color, updateNote, deleteNote }) => {
   const [noteContent, setNoteContent] = useState(content);
