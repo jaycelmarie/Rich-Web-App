@@ -5,7 +5,7 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    // Load notes from local storage on component mount
+    // Load notes from local storage 
     const savedNotes = localStorage.getItem('notetaking-notes');
     if (savedNotes) {
       setNotes(JSON.parse(savedNotes));
@@ -60,10 +60,11 @@ function App() {
           deleteNote={deleteNote}
         />
       ))}
+      {/* Save button */}
       <button className="save-note" type="button">
         <img className="save-btn" src="save-btn.png" alt="Save" />
       </button>
-
+      {/* Colours for notes */}
       <div
         className="add-note"
         onClick={() => addNote('#1E90FF')}
@@ -78,7 +79,69 @@ function App() {
       >
         +
       </div>
-      
+      <div
+        className="add-note"
+        onClick={() => addNote('#F0E68C')}
+        style={{ backgroundColor: '#F0E68C' }}
+      >
+        +
+      </div>
+      <div
+        className="add-note"
+        onClick={() => addNote('#F0E68C')}
+        style={{ backgroundColor: '#F0E68C' }}
+      >
+        +
+      </div>
+      <div
+        className="add-note"
+        onClick={() => addNote('#ADFF2F')}
+        style={{ backgroundColor: '#ADFF2F' }}
+      >
+        +
+      </div>
+      <div
+        className="add-note"
+        onClick={() => addNote('#DC143C')}
+        style={{ backgroundColor: '#DC143C' }}
+      >
+        +
+      </div>
+      <div
+        className="add-note"
+        onClick={() => addNote('#EE82EE')}
+        style={{ backgroundColor: '#EE82EE' }}
+      >
+        +
+      </div>
+      <div
+        className="add-note"
+        onClick={() => addNote('#8A2BE2')}
+        style={{ backgroundColor: '#8A2BE2' }}
+      >
+        +
+      </div>
+      <div
+        className="add-note"
+        onClick={() => addNote('#2F4F4F')}
+        style={{ backgroundColor: '#2F4F4F' }}
+      >
+        +
+      </div>
+      <div
+        className="add-note"
+        onClick={() => addNote('#696969')}
+        style={{ backgroundColor: '#696969' }}
+      >
+        +
+      </div>
+      <div
+        className="add-note"
+        onClick={() => addNote('#D3D3D3')}
+        style={{ backgroundColor: '#D3D3D3' }}
+      >
+        +
+      </div>
     </div>
   );
 }
