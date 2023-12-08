@@ -4,8 +4,8 @@ import '../main.css';
 
 function NotesApp() {
   const [notes, setNotes] = useState([]);
-  const { username } = useContext(LoginContext);
-  
+  const { username, setUsername, setShowProfile } = useContext(LoginContext);
+
   useEffect(() => {
     // Load notes from local storage 
     const savedNotes = localStorage.getItem('notetaking-notes');
@@ -55,6 +55,8 @@ function NotesApp() {
           {/* Show Profile */}
           <h1> Profile </h1>
           <h2> Welcome {username} </h2>
+
+          <button id="loginbtn" onClick={() => {setShowProfile(false)}}>LOGOUT</button>
 
           <div id="note-app">
               {notes.map((note) => (
