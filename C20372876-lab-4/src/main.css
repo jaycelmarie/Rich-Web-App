@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background: #f882cb;
+    background: #fa98d4;
 }
 
 h1, h2 {
@@ -21,20 +21,20 @@ label{
     padding: 20px;
 }
 
-#loginbtn{
+#loginAndFactbtn{
     display: flex;
     justify-content: center;
     margin: 60px auto;
     align-items: center;
     width: 220px;
     height: 59px;
-    background: #f882cb;
+    background: #eeec93;
     font-size: 19px;
     font-weight: 700;
     cursor: pointer;
 }
 
-#loginbtn:hover {
+#loginAndFactbtn:hover {
     opacity: 0.8;
 }
 

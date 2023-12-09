@@ -31,7 +31,7 @@ function Login() {
                         <input type="password" placeholder="Password"/>
                     </div>
                 </div>
-                <button id="loginbtn" onClick={() => {setShowProfile(true)}}>
+                <button id="loginAndFactbtn" onClick={() => {setShowProfile(true)}}>
                         LOGIN
                 </button>
             </div>
