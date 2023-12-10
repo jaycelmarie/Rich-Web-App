@@ -16,13 +16,15 @@ export const Excuses = ({ backTo }) =>  {
 
     return(
         <>
-            <button onClick={() => excuseCat("college")}>College</button>
-            <button onClick={() => excuseCat("gaming")}>Gaming</button>
-            <button onClick={() => excuseCat("family")}>Family</button>
-            <button onClick={() => excuseCat("party")}>Party</button>
-            <button onClick={() => excuseCat("funny")}>Funny</button>
+            <button id="excuseBtn" onClick={() => excuseCat("college")}>College</button>
+            <button id="excuseBtn" onClick={() => excuseCat("gaming")}>Gaming</button>
+            <button id="excuseBtn" onClick={() => excuseCat("family")}>Family</button>
+            <button id="excuseBtn" onClick={() => excuseCat("party")}>Party</button>
+            <button id="excuseBtn" onClick={() => excuseCat("funny")}>Funny</button>
 
-            <p> Excuse: {excuse} </p>
+            <div className="excuseRes">
+                <p> Excuse: {excuse} </p>
+            </div>
 
             <button id ="loginAndFactbtn">
                 <Link to={backTo}>Back to Homepage</Link>

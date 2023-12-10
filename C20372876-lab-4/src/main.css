@@ -21,6 +21,19 @@ label{
     padding: 20px;
 }
 
+#excuseBtn{
+    justify-content: center;
+    margin: 5px auto;
+    align-items: center;
+    width: 100px;
+    height: 59px;
+    background: #eeec93;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
 #loginAndFactbtn{
     display: flex;
     justify-content: center;
@@ -43,6 +56,11 @@ label{
     grid-template-columns: repeat(auto-fill, 350px);
     padding: 20px;
     gap: 10px;
+}
+
+.excuseRes{
+    background: #fff;
+    border-style: solid;
 }
 
 .container{
