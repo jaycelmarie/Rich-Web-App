@@ -73,7 +73,6 @@ function NotesApp() {
   return (
     <>
       {/* Show Profile */}
-      <h1> Profile </h1>
       <h2> Welcome {username} </h2>
 
       <button id="loginAndFactbtn" onClick={() => setShowProfile(false)}>
