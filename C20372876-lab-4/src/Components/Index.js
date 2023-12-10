@@ -11,6 +11,9 @@ function Index() {
             <button id="loginAndFactbtn">
                 <Link to='/Excuses'> Generate Excuses</Link>
             </button>
+            <button id="loginAndFactbtn">
+                <Link to='/GithubSearch'> Search User Github</Link>
+            </button>
         </>
     );
 }
