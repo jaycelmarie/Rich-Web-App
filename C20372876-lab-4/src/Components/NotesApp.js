@@ -92,8 +92,8 @@ function NotesApp() {
           />
         ))}
         {/* Save button */}
-        <button className="save-note" type="button">
-          <img className="save-btn" src="save-btn.png" alt="Save" />
+        <button className="save-btn" type="button">
+          Save
         </button>
         {/* Colours for notes */}
         <div

@@ -6,46 +6,18 @@ h2 {
     text-align: center;
     margin-right: 50px;
 }
-/* Search Bar */
-.form-group {
-    line-height: 20px;
-    vertical-align: middle;
-    margin-right: 15%;
+
+caption {
+    padding: 10px;
+    caption-side: bottom;
 }
 
-.form-control {
-    height: 30px;
-    width: 40%;
-    border: solid 1px rgb(0, 0, 0);
-}
-.btn {
-    border: solid 1px rgb(0, 0, 0);
-    line-height: 22px;
-    border-radius: 25px;
-}
-
-/* Table */
-.row {
-    margin-left: -5px;
-    margin-right: -5px;
-    background-color: rgb(244, 161, 161);
-    border-radius: 25px;
-    padding: 5px;
-    margin-top: 5px;
-    width: 80%;
-}
-
-.column {
-    float: left;
+img {
     width: 50%;
+    height: auto;
     padding: 5px;
-    display:block;
-}
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+    margin-left: 30%;
+    margin-right: 50%;
 }
 
 table {
@@ -77,6 +49,54 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+/* Classes */
+
+.form-control {
+    height: 30px;
+    width: 40%;
+    border: solid 1px rgb(0, 0, 0);
+}
+
+/* .btn {
+    border: solid 1px rgb(0, 0, 0);
+    line-height: 22px;
+    border-radius: 25px;
+    display: flex;
+} */
+
+.btn{
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    background: #eeec93;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.row {
+    background-color: rgb(244, 161, 161);
+    border-radius: 25px;
+    padding: 5px;
+    width: 50%;
+    margin: auto;
+}
+
+.column {
+    width: 70%;
+    padding: 5px;
+    display:block;
+    margin: auto;
+    
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 .title{
     border-top: 1px solid black;
@@ -86,26 +106,15 @@ tr:nth-child(even) {
     border-top: 1px solid black;
 }
 
-caption {
-    padding: 10px;
-    caption-side: bottom;
-}
+/* IDs */
 
-img {
-    width: 50%;
-    height: auto;
-    padding: 5px;
-    margin-left: 30%;
-    margin-right: 50%;
+#search{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    width: 40%;
+    height: 50px;
+    background: #eaeaea;
+    border-radius: 6px;
 }
-
-#table-wrapper {
-    height: 360px;
-}
-
-.add-scroll {
-    overflow: auto;
-    overflow-y: scroll;
-    height: auto;
-}
-

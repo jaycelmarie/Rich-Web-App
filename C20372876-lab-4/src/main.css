@@ -167,7 +167,8 @@ label{
 }
 
 .save-btn{
-    height: 25px;
+    height: 50px;
+    font-weight: bold;
     margin-right:100px;
     float:left;
     text-align: center;
