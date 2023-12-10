@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { LoginContext } from './Contexts/LoginContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NotesApp from "./Components/NotesApp";
-import Login from "./Components/Login";
 import HomeLogin from "./Components/HomeLogin";
 import Index from "./Components/Index";
+import Excuses from "./Components/Excuses";
 import './main.css';
 
 function App() {
@@ -17,8 +15,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/HomeLogin" element={<HomeLogin backTo="/"/>} />
-      {/* <Route path="/Login" element={<Login backTo="/"/>} />
-      <Route path="/NotesApp" element={<NotesApp backTo="/"/>} /> */}
+      <Route path="/Excuses" element={<Excuses backTo="/"/>} />
       </Routes>
     </Router>
   );

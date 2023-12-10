@@ -12,12 +12,13 @@ export const Home = ({ backTo }) => {
     return(
       <>
         <div className="App">
-        {/* if showprofile is true, go notesapp, otherwise go login page */}
-        <LoginContext.Provider value={{username, setUsername, setShowProfile}}>
-          {showProfile ? <NotesApp /> : <Login />}
-        </LoginContext.Provider>
+          {/* if showprofile is true, go notesapp, otherwise go login page */}
+          <LoginContext.Provider value={{username, setUsername, setShowProfile}}>
+            {showProfile ? <NotesApp /> : <Login />}
+          </LoginContext.Provider>
         </div>
-        <button>
+
+        <button id ="loginAndFactbtn">
           <Link to={backTo}>Back to Homepage</Link>
         </button>
       </>  
