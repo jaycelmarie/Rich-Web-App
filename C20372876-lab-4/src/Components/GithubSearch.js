@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../main.css'; 
+import '../githubSearch.css'; 
 
 export const GithubSearch = ({ backTo }) =>  {
   const [search, setSearch] = useState('');
   const [userData, setUserData] = useState(null);
-  const [repos, setRepos] = useState([]);
-  const [showScroll, setShowScroll] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,13 +13,8 @@ export const GithubSearch = ({ backTo }) =>  {
       const response = await fetch(`https://api.github.com/users/${search}`);
       const userData = await response.json();
 
-      const reposResponse = await fetch(`https://api.github.com/users/${search}/repos`);
-      const reposData = await reposResponse.json();
-
       setUserData(userData);
-      setRepos(reposData);
 
-      setShowScroll(reposData.length > 5);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -54,6 +47,7 @@ export const GithubSearch = ({ backTo }) =>  {
                 {userData && (
                 <table>
                     <tbody>
+                    <img src={userData.avatar_url || 'N/A'}/> 
                     <tr className="tbl1">
                         <th>Name: </th>
                         <td>{userData.name || 'N/A'}</td>
@@ -79,12 +73,6 @@ export const GithubSearch = ({ backTo }) =>  {
                 )}
             </div>
             </div>
-
-        {showScroll && (
-            <div className="add-scroll">
-            <p>Found more than 5 repos</p>
-            </div>
-        )}
         </div>
 
         <button id ="loginAndFactbtn">
