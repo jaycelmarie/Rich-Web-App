@@ -123,12 +123,11 @@ Example Code:
 </html>
 ```
 5. Detail how the browser loads and bootstraps a rich web application from an initial URL.
- Answer:  
-1. Enter URL into browser address bad or link.
-3. first, DNS or Domain Name system is performed to obtain the IP address associated with the domain in the URL.
-4. HTTP Request to the server, requesting the initial HTML document associated with URL.
-5. Server Processing the request and returns the HTML documents as an HTTP response.
-6.HTML Parsing.
-7. CSS Load and Parsing.
-8. Layout - browser determines the posiotioning and size of each element on the page.
+
+- Enter URL into browser address bad or link.
+-  first, DNS or Domain Name system is performed to obtain the IP address associated with the domain in the URL.
+- HTTP Request to the server, requesting the initial HTML document associated with URL.
+- Server Processing the request and returns the HTML documents as an HTTP response.
+- HTML Parsing and CSS Load and Parsing.
+- Layout - browser determines the posiotioning and size of each element on the page.
 
