@@ -123,6 +123,7 @@ Example Code:
 </html>
 ```
 5. Detail how the browser loads and bootstraps a rich web application from an initial URL.
+   
 1. Enter URL into browser address bad or link.
 3. first, DNS or Domain Name system is performed to obtain the IP address associated with the domain in the URL.
 4. HTTP Request to the server, requesting the initial HTML document associated with URL.
