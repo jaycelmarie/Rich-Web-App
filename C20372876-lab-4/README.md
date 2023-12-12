@@ -129,5 +129,5 @@ Example Code:
 - HTTP Request to the server, requesting the initial HTML document associated with URL.
 - Server Processing the request and returns the HTML documents as an HTTP response.
 - HTML Parsing and CSS Load and Parsing.
-- Layout - browser determines the posiotioning and size of each element on the page.
+- Layout - browser determines the positioning and size of each element on the page.
 
