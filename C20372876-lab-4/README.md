@@ -124,7 +124,7 @@ Example Code:
 ```
 5. Detail how the browser loads and bootstraps a rich web application from an initial URL.
 
-- Enter URL into browser address bad or link.
+- Enter URL into browser address bar or link.
 -  first, DNS or Domain Name system is performed to obtain the IP address associated with the domain in the URL.
 - HTTP Request to the server, requesting the initial HTML document associated with URL.
 - Server Processing the request and returns the HTML documents as an HTTP response.
